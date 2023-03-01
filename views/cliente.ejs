@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=clientes%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table class="table table-bordered table-striped">
+      <thead><tr>
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>CEP</th>
+          <th>EMAIL</th>
+          <th>FONE</th>
+          <th>FUNCAO</th>
+      </tr>
+      </thead>
+      
+      <tbody>
+          <% clientes.forEach(function(cliente, index ) { %>
+            <tr>
+              <td><%- cliente.cpf %></td>
+              <td><%- cliente.nome %></td>
+              <td><%- cliente.cep %></td>
+              <td><%- cliente.email %></td>
+              <td><%- cliente.telefone %></td>
+              <td><%- cliente.funcao %></td>               
+            </tr>
+          <% }) %>
+      </tbody>
+      
+      
+  </table>
+
+  </body>
+</html>

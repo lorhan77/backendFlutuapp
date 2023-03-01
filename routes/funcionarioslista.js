@@ -7,7 +7,7 @@ router.get('/', async function(req, res, next) {
     const db = require('../db');
     const funcionarios = await db.findAll();
     
-    res.send(funcionarios);
+    res.render("funcionarios",{funcionarios});
 
 
   });

@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var funcionariosAll = require('./routes/funcionarioslista');
 
-require('dotenv').config ({path: __dirname + '../.env' })
+require('dotenv').config ({path: __dirname + '/.env' })
 
 var app = express();
 

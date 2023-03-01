@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=funcionarios%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table class="table table-bordered table-striped">
+      <thead><tr>
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>CEP</th>
+          <th>EMAIL</th>
+          <th>FONE</th>
+          <th>FUNCAO</th>
+      </tr>
+      </thead>
+      
+      <tbody>
+          <% funcionarios.forEach(function(funcionario, index ) { %>
+            <tr>
+              <td><%- funcionario.cpf %></td>
+              <td><%- funcionario.nome %></td>
+              <td><%- funcionario.cep %></td>
+              <td><%- funcionario.email %></td>
+              <td><%- funcionario.telefone %></td>
+              <td><%- funcionario.funcao %></td>               
+            </tr>
+          <% }) %>
+      </tbody>
+      
+      
+  </table>
+
+  </body>
+</html>
