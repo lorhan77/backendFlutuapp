@@ -14,9 +14,9 @@ async function connect() {
     return singleton;
 }
 
-const COLLECTION = "funcionarios"; 
+//const COLLECTION = "funcionarios"; 
  
-async function findAll() {
+async function findAll(COLLECTION) {
     const db = await connect();
     return db.collection(COLLECTION).find().toArray();
 }
@@ -25,6 +25,12 @@ async function findOne(id) {
     
     const db = await connect();
     return db.collection(COLLECTION).findOne({ _id: new ObjectId(id) });
+}
+
+async function Insert(COLLECTION, id) {
+    
+    const db = await connect();
+    return db.collection(COLLECTION).insertOne(id);
 }
 
 async function findExpressao(filtro) {    
@@ -42,4 +48,4 @@ async function findExpressao(filtro) {
         
 }
  
-module.exports = { findAll, findOne, findExpressao } 
+module.exports = { findAll, findOne, findExpressao, Insert } 

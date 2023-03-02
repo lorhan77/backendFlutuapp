@@ -8,6 +8,7 @@ var bdyparser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var funcionariosAll = require('./routes/funcionarioslista');
+var clientesAll = require('./routes/clienteslista');
 
 require('dotenv').config ({path: __dirname + '/.env' })
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/funcionarios', funcionariosAll);
+app.use('/clientes', clientesAll);
 
 
 
