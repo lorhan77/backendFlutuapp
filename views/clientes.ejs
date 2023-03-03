@@ -26,6 +26,7 @@
               <div class="col-xs-4">
                   <button type="submit" class="btn btn-default">Incluir</button>
               </div>
+
           </div>
       </form>
 </div>
@@ -48,7 +49,8 @@
               <td><%- cliente.cep %></td>
               <td><%- cliente.email %></td>
               <td><%- cliente.telefone %></td>
-              <td><%- cliente.funcao %></td>               
+              <td><%- cliente.funcao %></td>   
+              <td><a href="/clientes/delete/<%=cliente._id%>" onclick="return confirm('Tem certeza que deseja excluir?');">X</a></td> 
             </tr>
           <% }) %>
       </tbody>

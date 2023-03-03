@@ -47,12 +47,13 @@
       <tbody>
           <% funcionarios.forEach(function(funcionario, index ) { %>
             <tr>
-              <td><%- funcionario.cpf %></td>
-              <td><%- funcionario.nome %></td>
-              <td><%- funcionario.cep %></td>
-              <td><%- funcionario.email %></td>
-              <td><%- funcionario.telefone %></td>
-              <td><%- funcionario.funcao %></td>               
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>"><%- funcionario.cpf %></a></td>
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>" ><%- funcionario.nome %></a></td>
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>" ><%- funcionario.cep %></a></td>
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>" ><%- funcionario.email %></a></td>
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>" ><%- funcionario.telefone %></a></td>
+              <td><a href="/funcionarios/editar/<%=funcionario._id%>" ><%- funcionario.funcao %></a></td>  
+              <td><a href="/funcionarios/delete/<%=funcionario._id%>" onclick="return confirm('Tem certeza que deseja excluir?');">X</a></td>                  
             </tr>
           <% }) %>
       </tbody>

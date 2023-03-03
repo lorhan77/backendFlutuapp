@@ -22,7 +22,6 @@ async function findAll(COLLECTION) {
 }
 
 async function findOne(id) {
-    
     const db = await connect();
     return db.collection(COLLECTION).findOne({ _id: new ObjectId(id) });
 }
@@ -31,6 +30,12 @@ async function Insert(COLLECTION, id) {
     
     const db = await connect();
     return db.collection(COLLECTION).insertOne(id);
+}
+
+async function Delete(COLLECTION, id) {
+    
+    const db = await connect();
+    return db.collection(COLLECTION).deleteOne({ _id: new ObjectId(id) });
 }
 
 async function findExpressao(filtro) {    
@@ -48,4 +53,4 @@ async function findExpressao(filtro) {
         
 }
  
-module.exports = { findAll, findOne, findExpressao, Insert } 
+module.exports = { findAll, findOne, findExpressao, Insert, Delete } 
