@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var router = express.Router();
 
 // get funcionarios
@@ -34,7 +34,7 @@ router.get('/delete/:id', async function(req, res, next) {
   }
 });
 
-//editar funcionarios-
+//editar funcionarios
 router.get('/editar/:id', async function(req, res, next) {
   try{
   const id = req.params.id  
@@ -42,11 +42,11 @@ router.get('/editar/:id', async function(req, res, next) {
   const funcionarios = await db.findOne("funcionarios", id);
   res.redirect('/funcionarios');
   }catch(err){
-    next(err);
+    next(err); 
   }
 });
 
 
   
 
-module.exports = router;
+module.exports = router;*/

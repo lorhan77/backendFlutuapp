@@ -4,17 +4,25 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bdyparser = require('body-parser');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
+var apiRouter= require('./routes/api');
 var usersRouter = require('./routes/users');
-var funcionariosAll = require('./routes/funcionarioslista');
-var clientesAll = require('./routes/clienteslista');
+//var funcionariosAll = require('./routes/funcionarioslista');
+//var clientesAll = require('./routes/clienteslista');
+var clientesRouter = require('./routes/clientes');
+var funcionariosRouter = require('./routes/funcionarios');
+var flutuantesRouter = require('./routes/flutuantes');
+var reservasRouter = require('./routes/reservas');
+
 
 require('dotenv').config ({path: __dirname + '/.env' })
 
 var app = express();
 
-
+app.use(cors({origin:'http://localhost:3000'}));
+app.options('*', cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,8 +36,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/funcionarios', funcionariosAll);
-app.use('/clientes', clientesAll);
+app.use('/clientes',clientesRouter);
+app.use('/funcionarios',funcionariosRouter);
+app.use('/flutuantes',flutuantesRouter);
+app.use('/api', apiRouter);
+app.use('/reservas', reservasRouter);
 
 
 
